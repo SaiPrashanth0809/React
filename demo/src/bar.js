@@ -94,8 +94,8 @@ function ResponsiveDrawer(props) {
             <WbSunnyIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <BasicTextFields />
           </Typography>
+          <BasicTextFields style={{paddingRight:'30px'}}/>
           <AccountCircleIcon />
           <Button color="inherit">Login</Button>
         </Toolbar>
