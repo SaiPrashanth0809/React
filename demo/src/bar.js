@@ -14,11 +14,13 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import UpcomingIcon from '@mui/icons-material/Upcoming';
+import BasicTextFields from './Searchbar';
+
 
 const drawerWidth = 240;
 
@@ -45,9 +47,9 @@ function ResponsiveDrawer(props) {
 
 
   const drawer = (
-    <div>
+    <div style={{backgroundColor:'#282c34', color:'white'}} >
       <Toolbar />
-      <img src="./logo1.webp" alt='logo' width='200px' style={{ marginBottom: '20px', paddingLeft: '25px', marginTop: '-30px' }} />
+      <img src="./Ping.png" alt='logo' width='200px' style={{ marginBottom: '20px', paddingLeft: '25px', marginTop: '-30px' }} />
       <Divider />
       <List>
         {['Galary', '', 'Upcoming'].map((text, index) => (
@@ -58,7 +60,7 @@ function ResponsiveDrawer(props) {
                 {index === 1 && <StarOutlineIcon />}
                 {index === 2 && <UpcomingIcon />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text} color='white' />
             </ListItemButton>
           </ListItem>
         ))}
@@ -70,11 +72,13 @@ function ResponsiveDrawer(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex',backgroundColor: '#282c34' }}>
       <CssBaseline />
       <AppBar
         position="fixed"
         sx={{
+          backgroundColor: '#282c34',
+          color:'white',
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
@@ -87,9 +91,10 @@ function ResponsiveDrawer(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2 }}
           >
-            <Brightness4Icon />
+            <WbSunnyIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <BasicTextFields />
           </Typography>
           <AccountCircleIcon />
           <Button color="inherit">Login</Button>
@@ -97,11 +102,12 @@ function ResponsiveDrawer(props) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 },  }}
         aria-label="mailbox folders"
       >
         
         <Drawer
+        
           container={container}
           variant="temporary"
           open={mobileOpen}
@@ -111,8 +117,10 @@ function ResponsiveDrawer(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
+            
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: '#282c34' }
+            
           }}
         >
           {drawer}
@@ -120,46 +128,14 @@ function ResponsiveDrawer(props) {
         <Drawer
           variant="permanent"
           sx={{
+            
             display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: '#282c34' }
           }}
           open
         >
           {drawer}
         </Drawer>
-      </Box>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-      >
-        <Toolbar />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
       </Box>
     </Box>
   );
