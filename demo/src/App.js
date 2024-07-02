@@ -1,4 +1,5 @@
 
+import Drawe from "./altbar";
 import ResponsiveDrawer from "./bar";
 
 
@@ -7,6 +8,8 @@ function App() {
     <>
     
     <ResponsiveDrawer /> 
+    <Drawe />
+
     </>
   );
 }

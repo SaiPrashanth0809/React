@@ -16,7 +16,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -41,11 +41,11 @@ import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import CastleIcon from '@mui/icons-material/Castle';
 import BasicTextFields from './Searchbar';
 import SearchIcon from '@mui/icons-material/Search';
-import Drawe from './altbar';
+import ResponsiveDrawer from './bar';
 
 const drawerWidth = 240;
 
-function ResponsiveDrawer(props) {
+function Drawe(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
@@ -71,11 +71,11 @@ function ResponsiveDrawer(props) {
   };
 
   const drawer = (
-    <div style={{ backgroundColor: '#282c34' }}>
+    <div >
       <Toolbar />
       <img src="./Ping.png" alt="logo" width="200px" style={{ marginBottom: '20px', paddingLeft: '25px', marginTop: '-30px' }} />
       <Divider />
-      <Typography sx={{ paddingLeft: '20px', color: 'white', marginTop: '9px' }}>
+      <Typography sx={{ paddingLeft: '20px', marginTop: '9px' }}>
         Categories
       </Typography>
       <List>
@@ -83,17 +83,17 @@ function ResponsiveDrawer(props) {
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index === 0 && <LocalMoviesIcon style={{ color: 'white' }} />}
-                {index === 1 && <StarOutlineIcon style={{ color: 'white' }} />}
-                {index === 2 && <UpcomingIcon style={{ color: 'white' }} />}
+                {index === 0 && <LocalMoviesIcon  />}
+                {index === 1 && <StarOutlineIcon  />}
+                {index === 2 && <UpcomingIcon  />}
               </ListItemIcon>
-              <ListItemText primary={text} style={{ color: 'white' }} />
+              <ListItemText primary={text}  />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
       <Divider />
-      <Typography sx={{ paddingLeft: '20px', color: 'white', marginTop: '13px' }}>
+      <Typography sx={{ paddingLeft: '20px', marginTop: '13px' }}>
         Genres
       </Typography>
       <List>
@@ -106,26 +106,26 @@ function ResponsiveDrawer(props) {
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index === 0 && <SportsHandballIcon style={{ color: 'white' }} />}
-                {index === 1 && <MotionPhotosAutoIcon style={{ color: 'white' }} />}
-                {index === 2 && <TheaterComedyIcon style={{ color: 'white' }} />}
-                {index === 3 && <GavelIcon style={{ color: 'white' }} />}
-                {index === 4 && <SlideshowIcon style={{ color: 'white' }} />}
-                {index === 5 && <Diversity3Icon style={{ color: 'white' }} />}
-                {index === 6 && <HandshakeIcon style={{ color: 'white' }} />}
-                {index === 7 && <AutoFixHighIcon style={{ color: 'white' }} />}
-                {index === 8 && <AvTimerIcon style={{ color: 'white' }} />}
-                {index === 9 && <MoodBadIcon style={{ color: 'white' }} />}
-                {index === 10 && <MusicNoteIcon style={{ color: 'white' }} />}
-                {index === 11 && <BlindIcon style={{ color: 'white' }} />}
-                {index === 12 && <VolunteerActivismIcon style={{ color: 'white' }} />}
-                {index === 13 && <BiotechIcon style={{ color: 'white' }} />}
-                {index === 14 && <LiveTvIcon style={{ color: 'white' }} />}
-                {index === 15 && <CelebrationIcon style={{ color: 'white' }} />}
-                {index === 16 && <RestaurantMenuIcon style={{ color: 'white' }} />}
-                {index === 17 && <CastleIcon style={{ color: 'white' }} />}
+                {index === 0 && <SportsHandballIcon  />}
+                {index === 1 && <MotionPhotosAutoIcon  />}
+                {index === 2 && <TheaterComedyIcon  />}
+                {index === 3 && <GavelIcon  />}
+                {index === 4 && <SlideshowIcon  />}
+                {index === 5 && <Diversity3Icon  />}
+                {index === 6 && <HandshakeIcon  />}
+                {index === 7 && <AutoFixHighIcon  />}
+                {index === 8 && <AvTimerIcon  />}
+                {index === 9 && <MoodBadIcon  />}
+                {index === 10 && <MusicNoteIcon  />}
+                {index === 11 && <BlindIcon  />}
+                {index === 12 && <VolunteerActivismIcon  />}
+                {index === 13 && <BiotechIcon  />}
+                {index === 14 && <LiveTvIcon  />}
+                {index === 15 && <CelebrationIcon  />}
+                {index === 16 && <RestaurantMenuIcon  />}
+                {index === 17 && <CastleIcon  />}
               </ListItemIcon>
-              <ListItemText primary={text} style={{ color: 'white' }} />
+              <ListItemText primary={text}  />
             </ListItemButton>
           </ListItem>
         ))}
@@ -136,13 +136,12 @@ function ResponsiveDrawer(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex', backgroundColor: '#282c34' }}>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: '#282c34',
-          color: 'white',
+          
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
@@ -155,7 +154,7 @@ function ResponsiveDrawer(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2 }}
           >
-            <Button color="inherit" onClick={toggleAltBar}><WbSunnyIcon /></Button>
+            <Button color="inherit" onClick={toggleAltBar}><Brightness4Icon /></Button>
           </IconButton>
           <Box sx={{ flexGrow: 1, paddingLeft: '170px' }} />
           <SearchIcon sx={{ fontSize: '30px', marginTop: '13px' }} />
@@ -183,7 +182,7 @@ function ResponsiveDrawer(props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: '#282c34' },
+            '& .MuiDrawer-paper': {  width: drawerWidth },
           }}
         >
           {drawer}
@@ -192,20 +191,20 @@ function ResponsiveDrawer(props) {
           variant="permanent"
           sx={{
             display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: '#282c34' },
+            '& .MuiDrawer-paper': {  width: drawerWidth },
           }}
           open
         >
           {drawer}
         </Drawer>
       </Box>
-      {showAltBar && <Drawe />}
+      {showAltBar && <ResponsiveDrawer />}
     </Box>
   );
 }
 
-ResponsiveDrawer.propTypes = {
+Drawe.propTypes = {
   window: PropTypes.func,
 };
 
-export default ResponsiveDrawer;
+export default Drawe;

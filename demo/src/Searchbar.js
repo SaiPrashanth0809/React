@@ -7,12 +7,25 @@ export default function BasicTextFields() {
     <Box
       component="form"
       sx={{
-        '& > :not(style)': { m: 1, width: '25ch', color:'white' },
+        '& > :not(style)': { m: 1, width: '25ch' },
       }}
       noValidate
       autoComplete="off"
     >
-      <TextField id="standard-basic" label="Sea" variant="standard" />
+      <TextField
+        id="standard-basic"
+        label="Search"
+        variant="standard"
+        sx={{
+          '& .MuiInputLabel-root': { color: 'white' }, // label color
+          '& .MuiInputLabel-root.Mui-focused': { color: 'white' }, // focused label color
+          '& .MuiInput-underline:before': { borderBottomColor: 'white' }, // default underline color
+          '& .MuiInput-underline:hover:before': { borderBottomColor: 'white' }, // underline color on hover
+          '& .MuiInput-underline:after': { borderBottomColor: 'white' }, // focused underline color
+          '& .MuiInputBase-input': { color: 'white' }, // input text color
+
+        }}
+      />
     </Box>
   );
 }
