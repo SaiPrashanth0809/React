@@ -1,5 +1,4 @@
 // Import the AltBar component at the top
-
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
@@ -43,6 +42,7 @@ import BasicTextFields from './Searchbar';
 import SearchIcon from '@mui/icons-material/Search';
 import Drawe from './altbar';
 
+
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
@@ -73,7 +73,7 @@ function ResponsiveDrawer(props) {
   const drawer = (
     <div style={{ backgroundColor: '#282c34' }}>
       <Toolbar />
-      <img src="./Ping.png" alt="logo" width="200px" style={{ marginBottom: '20px', paddingLeft: '25px', marginTop: '-30px' }} />
+      <img src="./Pingone.png" alt="logo" width="200px" style={{ marginBottom: '20px', paddingLeft: '25px', marginTop: '-30px' }} />
       <Divider />
       <Typography sx={{ paddingLeft: '20px', color: 'white', marginTop: '9px' }}>
         Categories
@@ -183,7 +183,7 @@ function ResponsiveDrawer(props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: '#282c34' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, },
           }}
         >
           {drawer}
@@ -200,6 +200,7 @@ function ResponsiveDrawer(props) {
         </Drawer>
       </Box>
       {showAltBar && <Drawe />}
+
     </Box>
   );
 }
